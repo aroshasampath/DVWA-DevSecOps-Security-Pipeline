@@ -1,0 +1,97 @@
+name: DevSecOps Security Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    name: Build and PHP Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose configuration
+        run: docker compose config --quiet
+
+      - name: Build DVWA Docker image
+        run: docker build -t dvwa-devsecops:ci .
+
+      - name: Validate the four remediated PHP files
+        run: |
+          docker run --rm --entrypoint php dvwa-devsecops:ci -l vulnerabilities/sqli/source/low.php
+          docker run --rm --entrypoint php dvwa-devsecops:ci -l vulnerabilities/xss_s/index.php
+          docker run --rm --entrypoint php dvwa-devsecops:ci -l vulnerabilities/xss_r/source/low.php
+          docker run --rm --entrypoint php dvwa-devsecops:ci -l vulnerabilities/exec/source/low.php
+
+  sast:
+    name: SAST - Custom Semgrep Rules
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Run blocking Semgrep scan
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE:/src:ro" -w /src semgrep/semgrep \
+            semgrep scan --error --config security/semgrep-ci.yml \
+            vulnerabilities/sqli/source/low.php \
+            vulnerabilities/xss_s/index.php \
+            vulnerabilities/xss_r/source/low.php \
+            vulnerabilities/exec/source/low.php
+
+  dependency-scan:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Scan project dependencies with Trivy
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE:/src:ro" -w /src aquasec/trivy:latest \
+            fs --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed --exit-code 0 .
+
+  secret-scan:
+    name: Secret Scan - Gitleaks
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan repository for committed secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  container-scan:
+    name: Container Image Scan
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Build image for scanning
+        run: docker build -t dvwa-devsecops:ci .
+
+      - name: Scan Docker image with Trivy
+        run: |
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest \
+            image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 0 dvwa-devsecops:ci

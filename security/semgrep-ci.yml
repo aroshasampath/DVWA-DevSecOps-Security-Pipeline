@@ -1,0 +1,24 @@
+rules:
+  # Blocks raw request values from being passed straight into shell commands.
+  - id: no-direct-request-to-shell
+    languages: [php]
+    severity: ERROR
+    message: Do not pass raw HTTP request data directly to a shell command.
+    pattern-either:
+      - pattern: shell_exec($_GET[$KEY])
+      - pattern: shell_exec($_POST[$KEY])
+      - pattern: system($_GET[$KEY])
+      - pattern: system($_POST[$KEY])
+      - pattern: exec($_GET[$KEY])
+      - pattern: exec($_POST[$KEY])
+
+  # Blocks raw request values from being written directly into HTML output.
+  - id: no-direct-request-to-html
+    languages: [php]
+    severity: ERROR
+    message: Encode untrusted HTTP request data before writing it to HTML.
+    pattern-either:
+      - pattern: echo $_GET[$KEY];
+      - pattern: echo $_POST[$KEY];
+      - pattern: $html .= $_GET[$KEY];
+      - pattern: $html .= $_POST[$KEY];

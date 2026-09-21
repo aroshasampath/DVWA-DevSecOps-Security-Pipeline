@@ -1,0 +1,10 @@
+﻿
+
+ScannedFiles    : 169
+TotalFindings   : 44
+ErrorSeverity   : 24
+WarningSeverity : 20
+ScanErrors      : 0
+
+
+

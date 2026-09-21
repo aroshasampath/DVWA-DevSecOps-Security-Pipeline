@@ -1,0 +1,9 @@
+﻿
+
+BeforeFindings : 42
+AfterFindings  : 42
+BeforeErrors   : 0
+AfterErrors    : 0
+
+
+

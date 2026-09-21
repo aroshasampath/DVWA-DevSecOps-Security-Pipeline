@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="bYBV0Gd68XPPvoRGwhDj">
+    <mxGraphModel dx="1493" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h2&gt;DVWA&amp;nbsp;DevSecOps System Architecture&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="390" x="210" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="User / Security Tester&lt;div&gt;web browser&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-12" edge="1" parent="1" source="IJlIGeZ3tR4Ze3tkFWAg-29" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="440" as="sourcePoint" />
+            <mxPoint x="240" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-13" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="120" as="sourcePoint" />
+            <mxPoint x="760" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-14" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="440" as="sourcePoint" />
+            <mxPoint x="760" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-15" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="760" y="440" as="sourcePoint" />
+            <mxPoint x="760" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Windows Host Machine - Docker Desktop + WSL 2" vertex="1">
+          <mxGeometry height="30" width="300" x="340" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-17" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="260" y="160" as="sourcePoint" />
+            <mxPoint x="740" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-18" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="260" y="400" as="sourcePoint" />
+            <mxPoint x="740" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-19" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="260" y="160" as="sourcePoint" />
+            <mxPoint x="260" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-20" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="740" y="400" as="sourcePoint" />
+            <mxPoint x="740" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="DVWA web container&lt;div&gt;PHP + Apache&lt;/div&gt;&lt;div&gt;dvwa-dvwa-1&lt;/div&gt;&lt;div&gt;port - 80&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="130" x="320" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="MariaDB container&lt;div&gt;database service&lt;/div&gt;&lt;div&gt;dvwa-db&lt;/div&gt;&lt;div&gt;port - 3306&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="560" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="GitHub Repository&lt;div&gt;Source , Dockerfile , workflow&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="40" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;GitHub Actions DevSecOps Pipeline&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Build &amp;amp; Test → SAST → Dependency Scan&lt;/span&gt;&lt;/div&gt;&lt;div&gt;→ Gitleaks → Docker Build → Trivy&lt;/div&gt;&lt;div&gt;Security Gate: Pass or Block Build&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="320" x="440" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-25" edge="1" parent="1" source="IJlIGeZ3tR4Ze3tkFWAg-11" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJlIGeZ3tR4Ze3tkFWAg-21" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-26" edge="1" parent="1" source="IJlIGeZ3tR4Ze3tkFWAg-21" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJlIGeZ3tR4Ze3tkFWAg-22" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-27" edge="1" parent="1" source="IJlIGeZ3tR4Ze3tkFWAg-23" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IJlIGeZ3tR4Ze3tkFWAg-24" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-28" edge="1" parent="1" source="IJlIGeZ3tR4Ze3tkFWAg-24" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="490" as="sourcePoint" />
+            <mxPoint x="600" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-30" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" target="IJlIGeZ3tR4Ze3tkFWAg-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="440" as="sourcePoint" />
+            <mxPoint x="240" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;HTTP Request/Response&lt;/div&gt;&lt;div&gt;127.0.0.1:4280 → Container Port 80&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="210" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SQL&lt;div&gt;TCP 3306&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="470" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Push/PR" vertex="1">
+          <mxGeometry height="30" width="60" x="320" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Build and scan applicatin image" vertex="1">
+          <mxGeometry height="30" width="180" x="600" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="IJlIGeZ3tR4Ze3tkFWAg-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Docker Compose Internal Network – Trust Boundary" vertex="1">
+          <mxGeometry height="30" width="290" x="345" y="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

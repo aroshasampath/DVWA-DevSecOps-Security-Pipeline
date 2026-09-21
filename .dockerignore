@@ -1,0 +1,10 @@
+**/.git
+**/.gitignore
+**/.github
+**/Dockerfile*
+**/.dockerignore
+**/compose.yml
+
+# Keep local secrets out of Docker images
+.env
+.env.*

@@ -19,10 +19,10 @@ jobs:
 
       - name: Validate Docker Compose configuration
         env:
-          DB_USER: dvwa
-          DB_PASSWORD: dvwa
-          DB_DATABASE: dvwa
-          DB_ROOT_PASSWORD: dvwa-root-password
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
+          DB_ROOT_PASSWORD: ${{ secrets.DB_ROOT_PASSWORD }}
         run: docker compose config --quiet
 
       - name: Build DVWA Docker image

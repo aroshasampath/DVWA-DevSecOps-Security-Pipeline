@@ -1,5 +1,6 @@
 ﻿
 
+Vulnerability  : Reflected XSS
 BeforeFindings : 38
 AfterFindings  : 38
 FindingsFixed  : 0

@@ -1,0 +1,11 @@
+﻿
+
+Vulnerability  : SQL Injection
+BeforeFindings : 44
+AfterFindings  : 42
+FindingsFixed  : 2
+BeforeErrors   : 0
+AfterErrors    : 0
+
+
+

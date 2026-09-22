@@ -1,7 +1,9 @@
 ﻿
 
+Vulnerability  : Stored XSS
 BeforeFindings : 42
 AfterFindings  : 42
+FindingsFixed  : 0
 BeforeErrors   : 0
 AfterErrors    : 0
 

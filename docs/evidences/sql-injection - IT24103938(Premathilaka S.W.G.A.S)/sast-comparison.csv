@@ -1,0 +1,3 @@
+﻿"Scan","Files","TotalFindings","SQLiLowFindings","ScanErrors"
+"Before","169","44","2","0"
+"After SQLi fix","169","42","0","0"

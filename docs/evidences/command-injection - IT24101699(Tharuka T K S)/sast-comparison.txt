@@ -1,0 +1,6 @@
+Vulnerability  : Command Injection
+BeforeFindings : 42
+AfterFindings  : 38
+FindingsFixed  : 4
+BeforeErrors   : 0
+AfterErrors    : 0
